@@ -25,11 +25,24 @@ public class UrlMapping_entity {
     }
 
     public long getId() {
+        return id;
     }
 
     public void setCreatedDate(LocalDateTime now) {
     }
 
     public void setOriginalUrl(String originalUrl) {
+    }
+
+    public String getOriginalUrl() {
+        return originalUrl;
+    }
+
+    public String getShortCode() {
+        return shortCode;
+    }
+
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
     }
 }
