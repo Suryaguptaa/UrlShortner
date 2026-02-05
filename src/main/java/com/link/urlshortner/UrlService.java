@@ -20,7 +20,7 @@ public class UrlService {
     }
 
     public String encode(long input) {
-        if (input <= 0) {
+        if (input == 0) {
             throw new IllegalArgumentException("Input must be greater than 0");
         }
 
@@ -39,11 +39,12 @@ public class UrlService {
 
         UrlMapping_entity urlMapping = new UrlMapping_entity();
         urlMapping.setOriginalUrl(originalUrl);
+        urlMapping.setShortCode("TEMP");
         urlMapping.setCreatedDate(LocalDateTime.now());
 
         urlMapping = urlRepository.save(urlMapping);
 
-        String shortCode = encode(urlMapping.getId());
+        String shortCode = encode(urlMapping.getId() + 100000);
 
         urlMapping.setShortCode(shortCode);
 

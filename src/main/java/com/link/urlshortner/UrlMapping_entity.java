@@ -14,32 +14,34 @@ public class UrlMapping_entity {
     @Column(nullable = false)
     private String originalUrl;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String shortCode;
 
-    @Column(nullable = false)
-    private LocalDateTime createdDate;
+    @Column(updatable = false)
+    private LocalDateTime createdDate = LocalDateTime.now();
 
-
-    public void setShortCode(String shortCode) {
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setCreatedDate(LocalDateTime now) {
-    }
-
     public void setOriginalUrl(String originalUrl) {
+        this.originalUrl = originalUrl;
     }
 
     public String getOriginalUrl() {
         return originalUrl;
     }
 
+    public void setShortCode(String shortCode) {
+        this.shortCode = shortCode;
+    }
+
     public String getShortCode() {
         return shortCode;
+    }
+
+    public void setCreatedDate(LocalDateTime createdDate) {
+        this.createdDate = createdDate;
     }
 
     public LocalDateTime getCreatedDate() {
