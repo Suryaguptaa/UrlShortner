@@ -21,4 +21,15 @@ public class UrlMapping_entity {
     private LocalDateTime createdDate;
 
 
+    public void setShortCode(String shortCode) {
+    }
+
+    public long getId() {
+    }
+
+    public void setCreatedDate(LocalDateTime now) {
+    }
+
+    public void setOriginalUrl(String originalUrl) {
+    }
 }
